@@ -11,47 +11,87 @@ btn.addEventListener('click', () => {
 
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     let passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
-    const result = passwordRegex.test('12345678')
-    console.log(result)
+    
     if(firstname.value === '') {
         paragraph.innerText = 'FirstName is required'
         firstname.classList.add('inputBorder')
-    }else if(lastname.value === '') {
+        return
+    }else {
+        paragraph.innerText = ''
         firstname.classList.remove('inputBorder')
+    }
+    
+    if(lastname.value === '') {
         paragraph.innerText = 'LastName is required'
         lastname.classList.add('inputBorder')
-    }else if(email.value === '') {
+        return
+    }else{
+        paragraph.innerText = ''
         lastname.classList.remove('inputBorder')
+    } 
+    
+    if(email.value === '') {
         paragraph.innerText = 'Email is required'
         email.classList.add('inputBorder')
-    }else if(regex.test(email.value) === false) {
+        return
+    }else {
+        paragraph.innerText = ''
         email.classList.remove('inputBorder')
+    } 
+    
+    if(regex.test(email.value) === false) {
         paragraph.innerText = 'Invalid email address'
         email.classList.add('inputBorder')
-    }else if(password.value === '') {
+        return
+    }else {
+        paragraph.innerText = ''
         email.classList.remove('inputBorder')
+    } 
+    
+    if(password.value === '') {
         paragraph.innerText = 'Password is required'
         password.classList.add('inputBorder')
-    }else if(password.value.length < 8) {
+        return
+    }else {
+        paragraph.innerText = ''
         password.classList.remove('inputBorder')
+    }
+    
+    if(password.value.length < 8) {
         paragraph.innerText = 'Password must have 8 characters'
         password.classList.add('inputBorder')
-    }else if(passwordRegex.test(password.value) === false) {
+        return
+    }else {
+        paragraph.innerText = ''
         password.classList.remove('inputBorder')
+    } 
+    
+    if(passwordRegex.test(password.value) === false) {
         paragraph.innerText = 'Password must have one lowercase and uppercase character, number and symbol'
         password.classList.add('inputBorder')
-    }else if(confirmpassword.value === '') {
+        return
+    }else {
+        paragraph.innerText = ''
         password.classList.remove('inputBorder')
+    }
+    
+    if(confirmpassword.value === '') {
         paragraph.innerText = 'Confirm Password is required'
         confirmpassword.classList.add('inputBorder')
-    }else if(password.value !== confirmpassword.value) {
-        confirmpassword.classList.remove('inputBorder')
+        return
+    }else {
+        paragraph.innerText = ''
+        confirmpassword.classList.add('inputBorder')
+    } 
+    
+    if(password.value !== confirmpassword.value) {
         paragraph.innerText = 'Password and Confirm Password must be same'
         password.classList.add('inputBorder')
         confirmpassword.classList.add('inputBorder')
+        return
     }else {
+        paragraph.innerText = ''
         password.classList.remove('inputBorder')
         confirmpassword.classList.remove('inputBorder')
-        paragraph.innerText = ''
     }
 })
