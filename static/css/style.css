@@ -33,7 +33,7 @@ body {
 .card-container {
     background-color: var(--white-color);
     width: 90%;
-    height: 63vh;
+    height: 67vh;
     border-radius: 0.6rem;
     box-shadow: 0.5rem 0.5rem 0.7rem var(--black-color);
     padding: 0.6rem 0;
@@ -79,6 +79,10 @@ body {
     border-radius: 0.8rem;
 }
 
+.inputBorder {
+    border: 0.1rem solid #E21717;
+}
+
 .btn-container {
     text-align: center;
 }
@@ -105,7 +109,7 @@ body {
 
 @media screen and (min-width: 800px) {
     .card-container {
-        height: 80vh;
+        height: 84vh;
     }
 
     .card-container h1 {
@@ -128,13 +132,13 @@ body {
 @media screen and (min-width: 1000px) {
     .card-container {
         width: 30rem;
-        height: 80vh;
+        height: 84vh;
     }
 }
 
 @media screen and (min-width: 1400px) {
     .card-container {
         width: 30rem;
-        height: 66vh;
+        height: 70vh;
     }
 }
